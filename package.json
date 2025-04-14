@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild src/loader.ts --bundle --outfile=dist/embed.js --minify --format=iife"
   },
   "repository": {
     "type": "git",
