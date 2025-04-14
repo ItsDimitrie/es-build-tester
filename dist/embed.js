@@ -1,0 +1,1 @@
+"use strict";(()=>{document.addEventListener("DOMContentLoaded",function(){(function(e,n,i){let r=e.getElementsByTagName(n)[0];if(e.getElementById(i))return;let t=e.createElement(n);t.id=i,t.src="https://itsdimitrie.github.io/table.one-widget-test/embed.js",r.parentNode?.insertBefore(t,r)})(document,"script","reservationWidgetScript")});})();
