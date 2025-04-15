@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     scriptElement.id = scriptId;
     scriptElement.src =
       "https://itsdimitrie.github.io/table.one-widget-test/embed.js";
-    // scriptElement.src = "http://localhost:5173/table.one-widget-test/embed.js";
 
     firstScript.parentNode?.insertBefore(scriptElement, firstScript);
   })(document, "script", "reservationWidgetScript");
