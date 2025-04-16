@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild src/loader.ts --bundle --outfile=dist/embed.js --minify --format=iife"
+    "build": "esbuild src/loader.ts --bundle --outfile=docs/embed.js --minify --format=iife"
   },
   "repository": {
     "type": "git",

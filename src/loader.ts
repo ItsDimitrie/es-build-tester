@@ -11,8 +11,8 @@
   let iframe = document.getElementById("reservation-widget-iframe");
 
   if (!iframe) {
-    restaurantId = config.dataRestaurant;
-    color = config.color;
+    const restaurantId = config.dataRestaurant;
+    const color = config.color;
     console.log(restaurantId);
 
     iframe = document.createElement("iframe");
