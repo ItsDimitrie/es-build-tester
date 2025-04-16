@@ -11,8 +11,8 @@
   let iframe = document.getElementById("reservation-widget-iframe");
 
   if (!iframe) {
-    restaurantId = config.dataRestaurant;
-    color = config.color;
+    let restaurantId = config.dataRestaurant;
+    let color = config.color;
     console.log(restaurantId);
 
     iframe = document.createElement("iframe");
@@ -30,6 +30,7 @@
     }
   }
 
+  // Listen for messages from the iframe (Vue app)
   window.addEventListener("message", (event) => {
     if (event.data.type === "resizeWidget") {
       iframe.style.width = event.data.width;
