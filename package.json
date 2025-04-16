@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild src/EmbedLoader.ts --bundle --outfile=docs/embed.js --minify --format=iife"
+    "build": "tsc build.ts && node build.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ItsDimitrie/es-build-tester#readme",
   "description": "",
   "devDependencies": {
-    "esbuild": "^0.25.2"
+    "esbuild": "^0.25.2",
+    "typescript": "^5.8.3"
   }
 }
