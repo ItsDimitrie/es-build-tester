@@ -1,13 +1,39 @@
-document.addEventListener("DOMContentLoaded", function () {
-  (function (document, scriptTag, scriptId) {
-    const firstScript = document.getElementsByTagName(scriptTag)[0];
-    if (document.getElementById(scriptId)) return;
+(function () {
+  const divContainer = document.querySelector(".widget-data");
 
-    const scriptElement = document.createElement(scriptTag);
-    scriptElement.id = scriptId;
-    scriptElement.src =
-      "https://itsdimitrie.github.io/table.one-widget-test/embed.js";
+  const config = {
+    dataRestaurant: divContainer
+      ? divContainer.getAttribute("restoId") || ""
+      : "",
+    color: divContainer ? divContainer.getAttribute("color") || "" : "",
+  };
 
-    firstScript.parentNode?.insertBefore(scriptElement, firstScript);
-  })(document, "script", "reservationWidgetScript");
-});
+  let iframe = document.getElementById("reservation-widget-iframe");
+
+  if (!iframe) {
+    restaurantId = config.dataRestaurant;
+    color = config.color;
+    console.log(restaurantId);
+
+    iframe = document.createElement("iframe");
+    iframe.src = ` https://itsdimitrie.github.io/table.one-widget-test?restaurantId=${restaurantId}&color=${color}`;
+    iframe.id = "reservation-widget-iframe";
+    iframe.style.all = "initial";
+    iframe.style.position = "fixed";
+    iframe.style.bottom = "1px";
+    iframe.style.right = "1px";
+
+    if (divContainer) {
+      divContainer.appendChild(iframe);
+    } else {
+      document.body.appendChild(iframe);
+    }
+  }
+
+  window.addEventListener("message", (event) => {
+    if (event.data.type === "resizeWidget") {
+      iframe.style.width = event.data.width;
+      iframe.style.height = event.data.height;
+    }
+  });
+})();
